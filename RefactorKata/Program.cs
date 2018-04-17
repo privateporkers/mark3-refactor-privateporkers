@@ -8,7 +8,7 @@ namespace RefactorKata
     {
         static void Main(string[] args)
         {
-            List<Product> products = new List<Product>();
+            var products = new List<Product>();
 
             using (var conn = new SqlConnection("Server=.;Database=myDataBase;User Id=myUsername;Password = myPassword;"))
             {
@@ -21,8 +21,6 @@ namespace RefactorKata
               {
                   products.Add( new Product {Name = reader["Name"].ToString() });
               }
-
-                conn.Dispose();
             }
 
             Console.WriteLine("Products Loaded!");
