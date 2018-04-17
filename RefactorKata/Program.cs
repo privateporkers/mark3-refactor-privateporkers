@@ -12,7 +12,6 @@ namespace RefactorKata
 
             using (var conn = new SqlConnection("Server=.;Database=myDataBase;User Id=myUsername;Password = myPassword;"))
             {
-
                 var cmd = conn.CreateCommand();
                 cmd.CommandText = "select * from Products";
 
