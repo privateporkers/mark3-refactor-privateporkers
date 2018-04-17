@@ -13,14 +13,14 @@ namespace RefactorKata
             using (var conn = new SqlConnection("Server=.;Database=myDataBase;User Id=myUsername;Password = myPassword;"))
             {
 
-              var cmd = conn.CreateCommand();
-              cmd.CommandText = "select * from Products";
+                var cmd = conn.CreateCommand();
+                cmd.CommandText = "select * from Products";
 
-              var reader = cmd.ExecuteReader();
-              while (reader.Read())
-              {
-                  products.Add( new Product {Name = reader["Name"].ToString() });
-              }
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    products.Add( new Product {Name = reader["Name"].ToString() });
+                }
             }
 
             Console.WriteLine("Products Loaded!");
